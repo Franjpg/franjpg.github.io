@@ -9,7 +9,7 @@
   $huevo = $_POST["Huevo"];
   $cuatroquesos = $_POST["4Quesos"];
 
-  $destino = "";
+  $destino = "franciscodufey@gmail.com";
   $nombre = $_POST["nombre"];
   $correo = $_POST["correo"];
   $solicitud = $_POST["solicitud"];

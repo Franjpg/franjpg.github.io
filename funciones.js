@@ -29,11 +29,11 @@ $(document).ready(function() {
 
   // Pedido Realizado
 
-  $('.pedir-btn').click(function() {
-    $('.modal-container').fadeOut(500);
-    $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
-    .delay(2500).fadeOut(500);
-  });
+  // $('.pedir-btn').click(function() {
+  //   $('.modal-container').fadeOut(500);
+  //   $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
+  //   .delay(2500).fadeOut(500);
+  // });
 
   // Comprobar Formulario
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
   // Envio con AJAX
 
-  $('.pedir-btn').click(function(e) {
+  $('.pedir-btn').click(function() {
 
     // Gustos
 
@@ -142,7 +142,9 @@ $(document).ready(function() {
     type: 'POST',
     data: ContenidoCorreo,
     success: function () {
-
+      $('.modal-container').fadeOut(500);
+      $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
+      .delay(2500).fadeOut(500);
     }
   })
   .done(function() {
