@@ -139,7 +139,7 @@ $(document).ready(function() {
 
   $.ajax({
     url: 'enviar.php',
-    type: 'POST',
+    type: 'GET',
     data: ContenidoCorreo,
     success: function () {
       $('.modal-container').fadeOut(500);
