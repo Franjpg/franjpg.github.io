@@ -18,6 +18,7 @@
   $contenido = "Gustos: " . $gustos . "\nNombre: " . $nombre . "\nCorreo: " . $correo . "\nSolicitud: " . $solicitud;
 
   mail($destino,"Nuevo pedido",$contenido);
+  header("Location:index.html");
 
 
 
