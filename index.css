@@ -144,12 +144,17 @@
 
   .menu h2 {
     font-weight: bold;
+    text-align: center;
   }
 
   /*////////////////////// ELEMENTOS PERSONALIZADOS //////////////////////*/
 
   .banner-container {
     margin-top: 40px;
+  }
+
+  .item img {
+    margin-bottom: 60px;
   }
 
   .h-center { /* Centrar Horizontalmente*/
@@ -397,6 +402,8 @@
       margin: 8px 0px 8px 0px;
     }
 
+
+
     /*////////////////////// MEDIA Q //////////////////////*/
 
     /*///// 773px /////*/
@@ -409,6 +416,7 @@
 
       .header-container {
         margin-bottom: 100px;
+        height: 190px;
       }
 
       .separador {
@@ -429,6 +437,10 @@
 
     @media (max-width: 600px) {
 
+      .item img {
+        margin-bottom: 60px;
+      }
+
       .banner-container {
         margin-top: 80px;
       }
@@ -442,6 +454,7 @@
         height: 150px;
         width: auto;
         transition: all 0.5s;
+        margin-top: 15px;
       }
 
       .dropdown-personalizado {
@@ -455,6 +468,10 @@
 
       .header-container {
         margin-bottom: 80px;
+      }
+
+      .map {
+        width: 80%;
       }
 
     }
