@@ -16,7 +16,7 @@
       <i class="ui icon close big cerrarModal"></i>
       <h1><strong>Crea tu Pizza<br><small>Gustos</small></strong></h1><br>
       <div class="gustos">
-        <form action="get" method="get">
+        <form action="enviar.php" method="post">
           <input type="checkbox" id="Muzzarella" name="Muzzarella"><label for="Muzzarella">Muzzarella</label>
           <input type="checkbox" id="Jamon" name="Jamon"><label for="Jamon">Jamón</label>
           <input type="checkbox" id="Bacon" name="Bacon"><label for="Bacon">Bacon</label>
@@ -28,50 +28,50 @@
           <h4>Nombre</h4>
           <div>
             <div class="ui input">
-              <input type="text" placeholder="Nombre" required class="nombre" name="nombre">
+              <input type="text" placeholder="Nombre" required class="nombre" name="nombre" value="Nombre">
             </div>
           </div> <br>
           <h4>Correo electrónico</h4>
           <div>
             <div class="ui input">
-              <input type="text" placeholder="ejemplo@mail.com" required class="correo" name="correo">
+              <input type="text" placeholder="ejemplo@mail.com" required class="correo" name="correo" value="ejemplo@mail.com">
             </div>
           </div> <br>
           <h4>¿Alguna solicitud más?</h4>
           <div>
             <div class="ui input">
-              <input type="text" placeholder="Quiero extra queso!" name="solicitud" class="solicitud">
+              <input type="text" placeholder="Quiero extra queso!" name="solicitud" class="solicitud" value="Extra queso!">
             </div>
           </div>
           <div>
-            <input type="submit" class="pedir-btn h-center v-center" value="¡Pick a Pizza!"></input>
+            <div class="pedir-btn h-center v-center" value="¡Pick a Pizza!">¡Pick a Pizza!</div>
           </div>
         </form>
     </div>
   </div>
   <div class="pedido-confirm-container"> <!-- Mensaje - Pedido en camino -->
     <div class="pedido-confirm-mensaje">
-      ¡Su pedido llegara en 30 min!
+      ¡Pedido realizado, llegara en 30 min!
     </div>
   </div>
   <div class="header-container">
     <div class="dropdown-personalizado"> <!-- Dropdown -->
       <button class="dropbtn"><i class="align justify icon"></i></button>
       <div id="myDropdown" class="dropdown-content">
-        <span href="#">Inicio</span>
-        <span href="#">Menu</span>
-        <span href="#">Nosotros</span>
-        <span href="#" class="pedido-boton-dropdown">¡Crea tu Pizza!</span>
+        <span class="inicio-btn">Inicio</span>
+        <span class="menus-btn">Menús</span>
+        <span class="nosotros-btn">Nosotros</span>
+        <span class="pedido-boton-dropdown">¡Crea tu Pizza!</span>
       </div>
     </div>
     <div class="logo"> <!-- Logo -->
-      <img src="img/logo.png">
+      <img src="img/logo.png" class="logo">
     </div>
     <div class="nav-container"> <!-- Menu -->
       <ul>
-        <li class="menu-item">Inicio</li>
-        <li class="menu-item">Menú</li>
-        <li class="menu-item">Nosotros</li>
+        <li class="menu-item inicio-btn">Inicio</li>
+        <li class="menu-item menus-btn">Menús</li>
+        <li class="menu-item nosotros-btn">Nosotros</li>
         <li class="pedido-boton">¡Crea tu Pizza!</li>
       </ul>
     </div>
@@ -115,25 +115,73 @@
       </a>
     </div>
   </div> <!-- Cierre Banner -->
+  <div class="separador">
+    <img src="img/separador.png" alt="">
+  </div>
   <div> <!-- Subheader -->
-    <h1 class="menu-header">Menús</h1>
+    <h1 class="menu-header">Menús y Promos</h1>
   </div>
   <div class="menu-container"> <!-- Menus -->
     <div class="menu">
       <img src="img/menu1.png" class="ui image">
-      <h2>Menu1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <h2>Cuatro Quesos</h2>
+      <p>¡Con tu pizza Cuatro Quesos %40 off!</p>
+      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
     </div>
     <div class="menu">
-      <img src="img/menu1.png" class="ui image">
-      <h2>Menu1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <img src="img/menu2.png" class="ui image">
+      <h2>Bacon</h2>
+      <p>¡Con tu pizza extra Bacon %40 off!</p>
+      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
     </div>
     <div class="menu">
-      <img src="img/menu1.png" class="ui image">
-      <h2>Menu1</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <img src="img/menu3.png" class="ui image">
+      <h2>Tomate y Jamón</h2>
+      <p>¡Con tu pizza Jamón/Tomate %40 off!</p>
+      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
     </div>
+  </div>
+  <div class="separador">
+    <img src="img/separador.png" alt="">
+  </div>
+  <div class="footer-container">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d2313.481650461848!2d-56.17718340073667!3d-34.91254403590081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d-34.912121!2d-56.1766144!5e0!3m2!1ses!2suy!4v1497842075621"
+      width="500" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="datos">
+      <div>
+        <h3>Contáctanos</h3>
+      </div>
+      <div>
+        <i class="ui icon facebook"></i>
+        <span>Facebook</span>
+      </div>
+      <div>
+        <i class="ui icon twitter"></i>
+        <span>Twitter</span>
+      </div>
+      <div>
+        <i class="ui icon instagram"></i>
+        <span>Instagram</span>
+      </div>
+      <div>
+        <i class="ui icon skype"></i>
+        <span>Skype</span>
+      </div>
+      <div>
+        <i class="ui icon whatsapp"></i>
+        <span>WhatsApp</span>
+      </div>
+      <div>
+        <i class="ui icon youtube"></i>
+        <span>Youtube</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="up-btn-container h-center v-center">
+    <i class="ui icon chevron up up-btn"></i>
   </div>
 
 

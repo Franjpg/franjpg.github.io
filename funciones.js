@@ -9,11 +9,19 @@ $(document).ready(function() {
   $('.pedido-boton').click(function() {
     $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
+    $('.creaTuPizza-modal').css('margin-top', '0px');
   });
 
   $('.pedido-boton-dropdown').click(function() {
     $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
+    $('.creaTuPizza-modal').css('margin-top', '0px');
+  });
+
+  $('.pedir-btn-promo').click(function() {
+    $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
+    $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
+    $('.creaTuPizza-modal').css('margin-top', '1400px');
   });
 
   // Cerrar modal - Crea tu Pizza
@@ -22,34 +30,48 @@ $(document).ready(function() {
     $('.modal-container').fadeOut(500);
   });
 
-  // // Pick a pizza Button error
-  // $('.pedir-btn').click(function() {
-  //   $(this).transition('shake');
-  // });
+  // Animaciones random
 
-  // Pedido Realizado
+  $('.logo').click(function() {
+    $(this).transition('pulse');
+  });
 
-  // $('.pedir-btn').click(function() {
-  //   $('.modal-container').fadeOut(500);
-  //   $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
-  //   .delay(2500).fadeOut(500);
-  // });
 
-  // Comprobar Formulario
+  // Scroll Funciones
 
-  // var correo = $('.correo').val();
-  //
-  // $('.pedir-btn').click(function() {
-  //
-  //   if (correo = '') {
-  //     $('.pedir-btn').text('Error');
-  //   }
-  //
-  // });
+    // Determinar la posicion de cada elemento para usarlo en la animacion del scroll
+
+    var menusScroll = $('.menu-header').offset().top - 50;
+    var footerScroll = $('.up-btn').offset().top;
+
+  $(function(){
+
+    $('.up-btn').click(function() {
+      $('body').animate({scrollTop: 0}, "2000");
+    });
+
+    $('.inicio-btn').click(function() {
+      $('body').animate({scrollTop:0}, "1000");
+    });
+
+    $('.menus-btn').click(function() {
+      $('body').animate({scrollTop: menusScroll}, "2000");
+    });
+
+    $('.nosotros-btn').click(function() {
+      $('body').animate({scrollTop: footerScroll}, "2000");
+    });
+
+    // $(window).scroll(function() {
+    //
+    // }); // window.scroll
+  });
 
   // Envio con AJAX
 
-  $('.pedir-btn').click(function() {
+  $('.pedir-btn').click(function(e) {
+
+    e.preventDefault();
 
     // Gustos
 
@@ -121,41 +143,34 @@ $(document).ready(function() {
 
     var nombre = $('.nombre').val();
     var correo = $('.correo').val();
-    var solicitud = $('.soliditud').val();
+    var solicitud = $('.solicitud').val();
     var ContenidoCorreo =
-    "Nombre: " + nombre + "\n" +
-    "Correo: " + correo + "\n" +
-    "Solicitud: " + solicitud + "\n" +
-    "Muzarella: " + Muzzarella + "\n" +
-    "Jamon: " + Jamon + "\n" +
-    "Bacon: " + Bacon + "\n" +
-    "Palmitos: " + Palmitos + "\n" +
-    "Pollo: " + Pollo + "\n" +
-    "Huevo: " + Huevo + "\n" +
-    "Cuatro Quesos: " + Cuatroquesos;
+    "Nombre= " + nombre + "\n" +
+    "&Correo= " + correo + "\n" +
+    "&Solicitud= " + solicitud + "\n" +
+    "&Muzarella= " + Muzzarella + "\n" +
+    "&Jamon= " + Jamon + "\n" +
+    "&Bacon= " + Bacon + "\n" +
+    "&Palmitos= " + Palmitos + "\n" +
+    "&Pollo= " + Pollo + "\n" +
+    "&Huevo= " + Huevo + "\n" +
+    "&Cuatro Quesos= " + Cuatroquesos;
+
+    $.ajax({
+      url: 'enviar.php',
+      type: 'POST',
+      data: ContenidoCorreo,
+      success: function () {
+        // Animacion y mensaje en verde con el tiempo de llegada del pedido
+        $('.modal-container').fadeOut(500);
+        $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
+        .delay(2500).fadeOut(500);
+      }
+    });
 
   }); // Fin .click llena variables
 
 
-  $.ajax({
-    url: 'enviar.php',
-    type: 'GET',
-    data: ContenidoCorreo,
-    success: function () {
-      $('.modal-container').fadeOut(500);
-      $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
-      .delay(2500).fadeOut(500);
-    }
-  })
-  .done(function() {
-    console.log("success");
-  })
-  .fail(function() {
-    console.log("error");
-  })
-  .always(function() {
-    console.log("complete");
-  });
 
 
 
