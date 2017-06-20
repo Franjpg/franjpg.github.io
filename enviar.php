@@ -15,7 +15,7 @@
   $solicitud = $_POST["solicitud"];
 
   $gustos = $muzza . " " . $jamon . " " . $bacon . " " . $palmitos . " " . $pollo . " " . $huevo . " " . $cuatroquesos . " ";
-  $contenido = "Gustos: " . $gustos . "\nNombre: " . $nombre . "\nCorreo: " . $correo . "\nSolicitud: " . $solicitud;
+  $contenido = "Gustos: " . "\n" . $gustos . "\nNombre: " . $nombre . "\nCorreo: " . $correo . "\nSolicitud: " . $solicitud;
 
   mail($destino,"Nuevo pedido",$contenido);
   header("Location:index.html");

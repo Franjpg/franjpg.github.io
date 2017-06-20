@@ -10,18 +10,21 @@ $(document).ready(function() {
     $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css('margin-top', '0px');
+    $('.nombre').focus();
   });
 
   $('.pedido-boton-dropdown').click(function() {
     $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css('margin-top', '0px');
+    $('.nombre').focus();
   });
 
   $('.pedir-btn-promo').click(function() {
     $('.modal-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 500);
     $('.creaTuPizza-modal').css('margin-top', '1400px');
+    $('.nombre').focus();
   });
 
   // Cerrar modal - Crea tu Pizza
@@ -67,94 +70,114 @@ $(document).ready(function() {
     // }); // window.scroll
   });
 
+  // Verificacion de Formulario
+
+    $('.nombre').focusout(function() {
+      if ($('.nombre').val() == "") {
+        $('label').addClass('deshabilitado');
+        $('.nombre').transition('shake').delay(500);
+        $('.nombre').focus();
+      }
+      else {
+        $('.direccion').focus();
+      }
+    });
+
+    $('.direccion').focusout(function() {
+      if ($('.direccion').val() == "") {
+        $('.direccion').transition('shake').delay(500);
+        $('.direccion').focus();
+      }
+      else {
+        $('label').removeClass('deshabilitado');
+      }
+    });
+
+
   // Envio con AJAX
 
   $('.pedir-btn').click(function(e) {
 
     e.preventDefault();
-
     // Gustos
 
       // Muzzarella
       if ($('#Muzzarella').prop('checked')) {
-        var Muzzarella = "Si";
+        var Muzzarella = "Muzzarella: Si";
       }
 
       else {
-        var Muzzarella = "No";
+        var Muzzarella = "Muzzarella: No";
       }
 
       // Jamon
       if ($('#Jamon').prop('checked')) {
-        var Jamon = "Si";
+        var Jamon = "Jamon: Si";
       }
 
       else {
-        var Jamon = "No";
+        var Jamon = "Jamon: No";
       }
 
       // Bacon
       if ($('#Bacon').prop('checked')) {
-        var Bacon = "Si";
+        var Bacon = "Bacon: Si";
       }
 
       else {
-        var Bacon = "No";
+        var Bacon = "Bacon: No";
       }
 
       // Palmitos
       if ($('#Palmitos').prop('checked')) {
-        var Palmitos = "Si";
+        var Palmitos = "Palmitos: Si";
       }
 
       else {
-        var Palmitos = "No";
+        var Palmitos = "Palmitos: No";
       }
 
       // Pollo
       if ($('#Pollo').prop('checked')) {
-        var Pollo = "Si";
+        var Pollo = "Pollo: Si";
       }
 
       else {
-        var Pollo = "No";
+        var Pollo = "Pollo: No";
       }
 
       // Huevo
       if ($('#Huevo').prop('checked')) {
-        var Huevo = "Si";
+        var Huevo = "Huevo: Si";
       }
 
       else {
-        var Huevo = "No";
+        var Huevo = "Huevo: No";
       }
 
       // 4Quesos
       if ($('#4Quesos').prop('checked')) {
-        var Cuatroquesos = "Si";
+        var Cuatroquesos = "Cuatro Quesos: Si";
       }
 
       else {
-        var Cuatroquesos = "No";
+        var Cuatroquesos = "Cuatro Quesos: No";
       }
-
 
     // Datos
 
-    var nombre = $('.nombre').val();
-    var correo = $('.correo').val();
-    var solicitud = $('.solicitud').val();
-    var ContenidoCorreo =
-    "Nombre= " + nombre + "\n" +
-    "&Correo= " + correo + "\n" +
-    "&Solicitud= " + solicitud + "\n" +
-    "&Muzarella= " + Muzzarella + "\n" +
-    "&Jamon= " + Jamon + "\n" +
-    "&Bacon= " + Bacon + "\n" +
-    "&Palmitos= " + Palmitos + "\n" +
-    "&Pollo= " + Pollo + "\n" +
-    "&Huevo= " + Huevo + "\n" +
-    "&Cuatro Quesos= " + Cuatroquesos;
+    // var nombre = $('.nombre').val();
+    // var direccion = $('.direccion').val();
+    
+    var ContenidoCorreo = "Nombre= " + $('.nombre').val() + "\n" +
+                          "&Solicitud= " + $('.direccion').val() + "\n" +
+                          "&Muzarella= " + Muzzarella + "\n" +
+                          "&Jamon= " + Jamon + "\n" +
+                          "&Bacon= " + Bacon + "\n" +
+                          "&Palmitos= " + Palmitos + "\n" +
+                          "&Pollo= " + Pollo + "\n" +
+                          "&Huevo= " + Huevo + "\n" +
+                          "&Cuatro Quesos= " + Cuatroquesos;
 
     $.ajax({
       url: 'enviar.php',
@@ -165,6 +188,8 @@ $(document).ready(function() {
         $('.modal-container').fadeOut(500);
         $('.pedido-confirm-container').css('display', 'flex').delay(600).fadeIn(500)
         .delay(2500).fadeOut(500);
+        $('.nombre').val("");
+        $('.direccion').val("");
       }
     });
 

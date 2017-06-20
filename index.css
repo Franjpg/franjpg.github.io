@@ -310,6 +310,10 @@
       transition: all 0.4s ease-in-out;
     }
 
+    .deshabilitado {
+      pointer-events: none;
+    }
+
     /* Boton de pedir en cada promo */
 
     .pedir-btn-promo {
@@ -402,6 +406,24 @@
       margin: 8px 0px 8px 0px;
     }
 
+    /*///// DATOS INSTITUCIONALES /////*/
+
+    .institucionales-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      height: 100px;
+      margin-top: 25px;
+    }
+
+    .institucionales-container div {
+      flex-basis: 50%;
+      color: #fff;
+      font-size: 12pt;
+      text-align: center;
+    }
 
 
     /*////////////////////// MEDIA Q //////////////////////*/
