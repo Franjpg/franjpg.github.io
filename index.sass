@@ -1,0 +1,221 @@
+
+// Reset
+
+body
+  margin: 0
+  font-family: 'Lato', sans-serif
+  height: 100vh
+*,*::after,*::before
+  box-sizing: border-box
+
+// Pantalla de inicio
+
+.inicio
+  position: absolute
+  z-index: 10
+  width: 100vw
+  height: 100vh
+  display: flex
+  // Display none
+  // display: none
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background-color: dodgerblue
+  transition: all .5s ease
+  h1
+    text-align: center
+    color: #fff
+  .error
+    display: none
+    text-align: center
+    color: #fff
+  input
+    color: dodgerblue
+    font-size: 1.5em
+    padding: 10px
+    text-align: center
+    border: 0px
+.tarjeta
+  margin-top: -60px
+  width: 30vw
+  height: auto
+.btn
+  border-radius: 5px
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 10vw
+  height: 8vh
+  color: #fff
+  font-size: 1.3em
+  font-weight: bold
+  background-color: dodgerblue
+  border: 3px solid #fff
+  margin-top: 60px
+  cursor: pointer
+.btn:hover
+  background-color: #fff
+  color: dodgerblue
+  transition: all 0.6s ease
+  box-shadow: 0 0 30px white
+
+// Main con la grilla
+
+main
+  display: grid
+  // Display none
+  // display: none
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr 1fr
+  justify-content: center
+  height: 100vh
+
+// Cada primer generacion de divs despues de main
+
+main > div
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  color: #fff
+  cursor: pointer
+  .fa
+    font-size: 6em
+    margin-bottom: 20px
+main > div:hover
+  color: dodgerblue
+  background-color: #fff
+  transition: all 0.6s ease
+
+// Cada opcion de div
+
+.main-option
+  height: 100%
+  background-color: dodgerblue
+  span
+    font-size: 2em
+
+// Boton back
+
+.back
+  position: absolute
+  right: 80px
+  top: 30px
+  width: auto
+  height: auto
+  font-size: 4em
+  color: dodgerblue
+  transition: .5s all ease
+  cursor: pointer
+
+// Movete
+
+.movete
+  @extend .inicio
+  // Display none
+  display: none
+  justify-content: center
+  align-items: center
+  background-color: #fff
+  text-align: center
+  .backMovete
+    @extend .back
+  .btn
+    margin-top: 20px
+  .btn:hover
+    border: 3px solid dodgerblue
+  input
+    margin-top: 50px
+    width: 20vw
+    border: 3px solid dodgerblue
+.logo
+  @extend .tarjeta
+  width: 20vw
+  margin-bottom: 30px
+
+// Mapa
+
+.mapa
+  display: none
+  position: absolute
+  z-index: 9
+  overflow: hidden
+  width: 100vw
+  height: 100vh
+  iframe
+    width: 100vw
+    height: 100vh
+  .backMap
+    @extend .back
+
+// Transporte
+
+.transporte
+  display: none
+  position: absolute
+  z-index: 8
+  overflow: hidden
+  width: 100vw
+  height: 100vh
+  iframe
+    width: 100vw
+    height: 100vh
+  .backTrans
+    @extend .back
+
+// Tramites
+
+.tramites
+  display: none
+  position: absolute
+  z-index: 6
+  overflow: hidden
+  width: 100vw
+  height: 100vh
+  .tramites-opciones
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: 1fr 1fr
+    justify-content: center
+    height: 100vh
+    width: 100vw
+  .tramites-opciones > div
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    color: #fff
+    cursor: pointer
+    background-color: dodgerblue
+    font-size: 2em
+  .tramites-opciones > div:hover
+    color: dodgerblue
+    background-color: #fff
+    transition: all 0.6s ease
+  .backTramites
+    @extend .back
+    color: #fff
+    text-shadow: 0 0 10px black
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Fin

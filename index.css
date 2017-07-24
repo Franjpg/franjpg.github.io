@@ -1,525 +1,214 @@
-
-  /*////////////////////// BODY //////////////////////*/
-
-  body {
-    background: black;
-    height: 2000px;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  /*
-  Verde: #009246
-  Rojo: #ce2b37
-  */
-
-  /*////////////////////// HEADER //////////////////////*/
-
-
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    height: 160px;
-    width: 100%;
-    background: rgba(0,0,0,0.8);
-    /*position: fixed;
-    z-index: 1002;*/
-  }
-
-  .header-container div img {
-    height: 150px;
-    width: auto;
-    cursor: pointer;
-  }
-
-  .header-container ul {
-    -webkit-padding-start: 0px;
-  }
-
-  .header-container ul li {
-    display: inline;
-    padding: 20px 30px 20px 30px;
-    margin: 0px 5px 0px 5px;
-    font-size: 12pt;
-    color: white;
-    font-weight: bold;
-  }
-
-  .header-container ul li.menu-item:hover {
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    border-bottom: 3px solid #ce2b37;
-  }
-
-  /*////////////////////// DROPDOWN //////////////////////*/
-
-    /* Dropdown Button */
-  .dropbtn {
-      background-color: #ce2b37;
-      color: white;
-      padding: 18px;
-      font-size: 30px;
-      border: none;
-      cursor: pointer;
-  }
-
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #a30a16;
-    transition: all 0.4s ease-in-out;
-  }
-
-  .dropdown-personalizado {
-      position: relative;
-      display: none;
-  }
-
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-  }
-
-  /* Links adentro del dropdown */
-  .dropdown-content span {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-  }
-
-  /* dropdown hover */
-  .dropdown-content span:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-
-  /*////////////////////// MENU de comidas //////////////////////*/
-
-  .menu-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
-    width: 100%;
-    padding: 0px 60px 0px 60px;
-    margin-bottom: 60px;
-  }
-
-  h1.menu-header {
-    font-size: 40px;
-    color: #fff;
-    margin: 60px 0px 100px 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-
-    background-color: #fff;
-    border-radius: 5px;
-    width: 320px;
-    height: auto;
-    padding: 15px 5px 30px 5px;
-    margin: 15px;
-  }
-
-  .menu p {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12pt;
-  }
-
-  .menu h2 {
-    font-weight: bold;
-    text-align: center;
-  }
-
-  /*////////////////////// ELEMENTOS PERSONALIZADOS //////////////////////*/
-
-  .banner-container {
-    margin-top: 40px;
-  }
-
-  .item img {
-    margin-bottom: 60px;
-  }
-
-  .h-center { /* Centrar Horizontalmente*/
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .v-center { /* Centrar Verticualmente*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .up-btn-container {
-    width: 100%;
-    height: 120px;
-    margin-bottom: 20px;
-  }
-
-  .up-btn-container i {
-    color: #fff;
-    font-size: 28pt;
-    cursor: pointer;
-  }
-
-  /*///// Crea tu pizza BOTON /////*/
-
-  .pedido-boton {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-
-      cursor: pointer;
-
-      font-size: 18pt;
-      font-weight: bold;
-      color: white;
-
-      width: 200px;
-      height: 75px;
-      border-radius: 3px;
-
-      background-color: #ce2b37;
-    }
-
-    .pedido-boton:hover {
-      background-color: #a30a16;
-      transition: all 0.4s ease-in-out;
-    }
-
-    /*///// Crea tu Pizza Modal /////*/
-
-    .modal-container {
-      display: none;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: wrap;
-      flex-direction: column;
-
-      padding-top: 150px;
-      position: absolute;
-      z-index: 99;
-      height: 400%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .creaTuPizza-modal {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      flex-direction: column;
-
-      height: auto;
-      width: 550px;
-      position: absolute;
-      z-index: 100;
-      border-style: dashed solid dashed solid;
-      border-width: 8px;
-      padding: 40px 0px 50px 0px;
-      border-color: #ce2b37;
-      background-color: #fff;
-      border-radius: 5px;
-    }
-
-    .creaTuPizza-modal i {
-      position: absolute;
-      align-self: flex-end;
-      top: 20px;
-      right: 15px;
-    }
-
-    .creaTuPizza-modal h1 {
-      text-align: center;
-    }
-
-    /* Contenedor de los checkbox */
-
-    .gustos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      flex-wrap: wrap;
-      height: auto;
-      width: auto;
-      text-align: center;
-      width: 70%;
-    }
-
-    /* Modificar checkboxs del modal */
-
-    .gustos input[type="checkbox"]{display: none;}
-
-
-    .gustos label {
-      padding-right: 10px;
-      position: relative;
-      cursor: pointer;
-      margin: 7px;
-      font-size: 14pt;
-      color: #fff;
-      background-color: #d1d1d1;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .gustos [type="checkbox"]:checked + label {
-      background-color: #ce2b37;
-    }
-
-    /* Boton de pedir dentro del modal */
-
-    .pedir-btn {
-      width: 150px;
-      height: 70px;
-      background-color: #ce2b37;
-      color: #fff;
-      font-size: 14pt;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 30px;
-      border-style: none;
-    }
-
-    .pedir-btn:hover {
-      background-color: #a30a16;
-      transition: all 0.4s ease-in-out;
-    }
-
-    .deshabilitado {
-      pointer-events: none;
-    }
-
-    /* Boton de pedir en cada promo */
-
-    .pedir-btn-promo {
-      width: 120px;
-      height: 50px;
-      background-color: #ce2b37;
-      color: #fff;
-      font-size: 12pt;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 30px;
-      border-style: none;
-    }
-
-    .pedir-btn-promo:hover {
-      background-color: #a30a16;
-      transition: all 0.4s ease-in-out;
-    }
-
-    /* Confirmacion de pedido */
-
-    .pedido-confirm-container {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      z-index: 98;
-      background-color: rgba(0, 0, 0, 0.95);
-    }
-
-    .pedido-confirm-mensaje {
-      display: flex;
-      border-radius: 5px;
-      font-size: 14pt;
-      padding: 15px;
-      color: #fff;
-      background-color: #009246;
-    }
-
-    /*///// Separador /////*/
-
-    .separador {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      width: auto;
-      margin: 240px 0px 240px 0px;
-    }
-
-
-    /*///// FOOTER /////*/
-
-    .footer-container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      margin-top: -100px;
-      margin-bottom: 30px;
-    }
-
-    .datos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-
-      color: #fff;
-      width: 500px;
-      height: 400px;
-      font-size: 16pt;
-    }
-
-    .datos h3 {
-      font-weight: bold;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .datos i,span {
-      cursor: pointer;
-      margin: 8px 0px 8px 0px;
-    }
-
-    /*///// DATOS INSTITUCIONALES /////*/
-
-    .institucionales-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: row;
-      height: 100px;
-      margin-top: 25px;
-    }
-
-    .institucionales-container div {
-      flex-basis: 50%;
-      color: #fff;
-      font-size: 12pt;
-      text-align: center;
-    }
-
-
-    /*////////////////////// MEDIA Q //////////////////////*/
-
-    /*///// 773px /////*/
-
-    @media (max-width: 773px) {
-
-      .logo {
-        margin: 30px 0px 45px 0px;
-      }
-
-      .header-container {
-        margin-bottom: 100px;
-        height: 190px;
-      }
-
-      .separador {
-        margin: 100px 0px 100px 0px;
-      }
-
-      .footer-container {
-        margin-top: 150px;
-      }
-
-      .banner-container {
-        margin-top: 180px;
-      }
-
-    }
-
-    /*///// 600px /////*/
-
-    @media (max-width: 600px) {
-
-      .item img {
-        margin-bottom: 60px;
-      }
-
-      .banner-container {
-        margin-top: 80px;
-      }
-
-      .creaTuPizza-modal {
-        width: 100%;
-        height: auto;
-      }
-
-      .logo {
-        height: 150px;
-        width: auto;
-        transition: all 0.5s;
-        margin-top: 15px;
-      }
-
-      .dropdown-personalizado {
-        position: relative;
-        display: block;
-      }
-
-      .nav-container {
-        display: none;
-      }
-
-      .header-container {
-        margin-bottom: 80px;
-      }
-
-      .map {
-        width: 80%;
-      }
-
-    }
-
-    @media (min-width: 600px) {
-
-      .dropdown-personalizado {
-        position: relative;
-        display: none;
-      }
-
-    }
-
-    /*///// 340px /////*/
-
-    @media (max-width: 340px) {
-      .logo {
-        display: none;
-      }
-    }
-
-
-
-    /*box-shadow:
-      0 10px 50px rgba(0,0,0,0.30),
-      0 10px 50px rgba(50,0,0,0.30),
-      0 5px 12px rgba(0,0,0,0.22);*/
-
-      /*box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);*/
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.inicio, .movete {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: dodgerblue;
+  transition: all .5s ease;
+}
+
+.inicio h1, .movete h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.inicio .error, .movete .error {
+  display: none;
+  text-align: center;
+  color: #fff;
+}
+
+.inicio input, .movete input {
+  color: dodgerblue;
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: center;
+  border: 0px;
+}
+
+.tarjeta, .logo {
+  margin-top: -60px;
+  width: 30vw;
+  height: auto;
+}
+
+.btn {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 8vh;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: dodgerblue;
+  border: 3px solid #fff;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: dodgerblue;
+  transition: all 0.6s ease;
+  box-shadow: 0 0 30px white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  height: 100vh;
+}
+
+main > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  cursor: pointer;
+}
+
+main > div .fa {
+  font-size: 6em;
+  margin-bottom: 20px;
+}
+
+main > div:hover {
+  color: dodgerblue;
+  background-color: #fff;
+  transition: all 0.6s ease;
+}
+
+.main-option {
+  height: 100%;
+  background-color: dodgerblue;
+}
+
+.main-option span {
+  font-size: 2em;
+}
+
+.back, .movete .backMovete, .mapa .backMap, .transporte .backTrans, .tramites .backTramites {
+  position: absolute;
+  right: 80px;
+  top: 30px;
+  width: auto;
+  height: auto;
+  font-size: 4em;
+  color: dodgerblue;
+  transition: .5s all ease;
+  cursor: pointer;
+}
+
+.movete {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  text-align: center;
+}
+
+.movete .btn {
+  margin-top: 20px;
+}
+
+.movete .btn:hover {
+  border: 3px solid dodgerblue;
+}
+
+.movete input {
+  margin-top: 50px;
+  width: 20vw;
+  border: 3px solid dodgerblue;
+}
+
+.logo {
+  width: 20vw;
+  margin-bottom: 30px;
+}
+
+.mapa {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mapa iframe {
+  width: 100vw;
+  height: 100vh;
+}
+
+.transporte {
+  display: none;
+  position: absolute;
+  z-index: 8;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.transporte iframe {
+  width: 100vw;
+  height: 100vh;
+}
+
+.tramites {
+  display: none;
+  position: absolute;
+  z-index: 6;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tramites .tramites-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.tramites .tramites-opciones > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  cursor: pointer;
+  background-color: dodgerblue;
+  font-size: 2em;
+}
+
+.tramites .tramites-opciones > div:hover {
+  color: dodgerblue;
+  background-color: #fff;
+  transition: all 0.6s ease;
+}
+
+.tramites .backTramites {
+  color: #fff;
+  text-shadow: 0 0 10px black;
+}

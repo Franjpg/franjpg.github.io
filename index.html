@@ -4,184 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pick a Pizza</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Nombre</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="modal-container">
-    <div class="creaTuPizza-modal">
-      <i class="ui icon close big cerrarModal"></i>
-      <h1><strong>Crea tu Pizza<br><small>Gustos</small></strong></h1><br>
-      <div class="gustos">
-        <form action="enviar.php" method="post">
-          <input type="checkbox" id="Muzzarella" name="Muzzarella"><label for="Muzzarella">Muzzarella</label>
-          <input type="checkbox" id="Jamon" name="Jamon"><label for="Jamon">Jamón</label>
-          <input type="checkbox" id="Bacon" name="Bacon"><label for="Bacon">Bacon</label>
-          <input type="checkbox" id="Palmitos" name="Palmitos"><label for="Palmitos">Palmitos</label>
-          <input type="checkbox" id="Pollo" name="Pollo"><label for="Pollo">Pollo</label>
-          <input type="checkbox" id="Huevo" name="Huevo"><label for="Huevo">Huevo</label>
-          <input type="checkbox" id="4Quesos" name="4Quesos"><label for="4Quesos">Cuatro Quesos</label><br><br>
-          <h4>Nombre</h4>
-          <div>
-            <div class="ui input">
-              <input type="text" placeholder="Nombre" class="nombre" name="nombre">
-            </div>
-          </div> <br>
-          <h4>Dirección</h4>
-          <div>
-            <div class="ui input">
-              <input type="text" placeholder="Calle 1234, esq Calle" name="solicitud" class="direccion">
-            </div>
-          </div>
-          <div class="h-center v-center">
-            <div class="pedir-btn h-center v-center" value="¡Pick a Pizza!">¡Pick a Pizza!</div>
-          </div>
-        </form>
-      </div>
+  <div class="inicio">
+    <div>
+      <img src="img/tarjeta.png" class="tarjeta">
+    </div>
+    <div>
+      <h1>Bienvenido/a</h1>
+      <input type="password" placeholder="Ingresa tu PIN" class="pin">
+      <p class="error">PIN incorrecto</p>
+    </div>
+    <div class="btn">
+      Aceptar
     </div>
   </div>
-  <div class="pedido-confirm-container"> <!-- Mensaje - Pedido en camino -->
-    <div class="pedido-confirm-mensaje">
-      ¡Pedido realizado, llegará en 30 min!
+  <main>
+    <div class="main-option moveteoption">
+      <i class="fa fa-bicycle" aria-hidden="true"></i>
+      <span>Movete</span>
     </div>
-  </div>
-  <div class="header-container">
-    <div class="dropdown-personalizado"> <!-- Dropdown -->
-      <button class="dropbtn"><i class="align justify icon"></i></button>
-      <div id="myDropdown" class="dropdown-content">
-        <span class="inicio-btn">Inicio</span>
-        <span class="menus-btn">Menú</span>
-        <span class="nosotros-btn">Nosotros</span>
-        <span class="pedido-boton-dropdown">¡Crea tu Pizza!</span>
-      </div>
+    <div class="main-option transoption">
+      <i class="fa fa-bus" aria-hidden="true"></i>
+      <span>Transporte</span>
     </div>
-    <div class="logo"> <!-- Logo -->
+    <div class="main-option tramitesoption">
+      <i class="fa fa-university" aria-hidden="true"></i>
+      <span>Trámites</span>
+    </div>
+    <div class="main-option mapaoption">
+      <i class="fa fa-map" aria-hidden="true"></i>
+      <span>Mapa</span>
+    </div>
+  </main>
+  <div class="movete"> <!-- Modal de movete -->
+    <div class="backMovete">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div>
       <img src="img/logo.png" class="logo">
     </div>
-    <div class="nav-container"> <!-- Menu -->
-      <ul>
-        <li class="menu-item inicio-btn">Inicio</li>
-        <li class="menu-item menus-btn">Menú</li>
-        <li class="menu-item nosotros-btn">Nosotros</li>
-        <li class="pedido-boton">¡Crea tu Pizza!</li>
-      </ul>
-    </div>
-  </div>
-  <div class="banner-container"> <!-- Baner rotacion de fotos -->
-    <div id="carousel-example-generic" class="carousel slide h-center" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner h-center" role="listbox">
-        <div class="item active">
-          <img src="img/banner4.png" class="ui image centered">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/banner2.png" class="ui image centered">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/banner3.png" class="ui image centered">
-          <div class="carousel-caption"></div>
-        </div>
-        <div class="item">
-          <img src="img/banner1.png" class="ui image centered">
-          <div class="carousel-caption">
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div> <!-- Cierre Banner -->
-  <div class="separador">
-    <img src="img/separador.png" alt="" class="ui image">
-  </div>
-  <div> <!-- Subheader -->
-    <h1 class="menu-header">Menú y Promos</h1>
-  </div>
-  <div class="menu-container"> <!-- Menus -->
-    <div class="menu">
-      <img src="img/menu1.png" class="ui image">
-      <h2>Cuatro Quesos</h2>
-      <p>¡Con tu pizza Cuatro Quesos 40% off!</p>
-      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
-    </div>
-    <div class="menu">
-      <img src="img/menu2.png" class="ui image">
-      <h2>Bacon</h2>
-      <p>¡Con tu pizza extra Bacon 40% off!</p>
-      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
-    </div>
-    <div class="menu">
-      <img src="img/menu3.png" class="ui image">
-      <h2>Tomate y Jamón</h2>
-      <p>¡Con tu pizza Jamón/Tomate 40% off!</p>
-      <div class="pedir-btn-promo v-center h-center">Crea tu pizza</div>
-    </div>
-  </div>
-  <div class="separador">
-    <img src="img/separador.png" alt="" class="ui image">
-  </div>
-  <div class="footer-container">
-    <div class="map h-center v-center">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d2313.481650461848!2d-56.17718340073667!3d-34.91254403590081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d-34.912121!2d-56.1766144!5e0!3m2!1ses!2suy!4v1497842075621"
-      width="500" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <div class="datos">
-      <div>
-        <h3>Contáctanos</h3>
-      </div>
-      <div>
-        <i class="ui icon facebook"></i>
-        <span>Facebook</span>
-      </div>
-      <div>
-        <i class="ui icon twitter"></i>
-        <span>Twitter</span>
-      </div>
-      <div>
-        <i class="ui icon instagram"></i>
-        <span>Instagram</span>
-      </div>
-      <div>
-        <i class="ui icon skype"></i>
-        <span>Skype</span>
-      </div>
-      <div>
-        <i class="ui icon whatsapp"></i>
-        <span>WhatsApp</span>
-      </div>
-      <div>
-        <i class="ui icon youtube"></i>
-        <span>Youtube</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="institucionales-container">
     <div>
-      Rojo y Verde S.A. - Todos los derechos reservados 2017
+      <h3>¿Cuántas horas de ejercicio harás?</h3>
+      <p>Recuerda que el préstamo tiene un máximo de 4hs</p>
+    </div>
+    <input type="number" value="1" max="4" min="0">
+    <div class="btn">Solicitar</div>
+  </div>
+   <div class="transporte"> <!-- Modal del transporte -->
+    <div class="backTrans">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <iframe src="http://comoir.montevideo.gub.uy/"></iframe>
+  </div>
+  <div class="mapa"> <!-- Modal del mapa -->
+    <div class="backMap">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.0225448786914!2d-56.186927564469414!3d-34.905883735351786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81cb78209d13%3A0xfaf367ad3024da1c!2sIntendencia+de+Montevideo!5e0!3m2!1ses!2suy!4v1500585556900"
+    frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <div class="tramites"> <!-- Modal de Tramites -->
+    <div class="backTramites">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="tramites-opciones">
+      <div>Administrativo</div>
+      <div>Mascotas</div>
+      <div>Hogar</div>
+      <div>Servicios</div>
+      <div>Consultas</div>
+      <div>Documentos</div>
     </div>
   </div>
 
-  <div class="up-btn-container h-center v-center">
-    <i class="ui icon chevron up up-btn"></i>
-  </div>
+
 
 
 
@@ -191,8 +92,6 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
 <script src="funciones.js"></script>
 </body>
 </html>
